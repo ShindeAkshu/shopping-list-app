@@ -10,7 +10,16 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App-background">
+      <div className='main-container'>
+        <div className='add-item-box' >
+          <input className='add-item-input' placeholder='Add an Item...'>
+
+          </input>
+
+        </div>
+      </div>
+
     
     </div>
   );
