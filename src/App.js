@@ -19,10 +19,25 @@ function App() {
             <fontawesomeIcon icon={FaPlus}/>
           </div>
           <div className='item-list'>
+            {items.map(()=>(
             <div className='item-container'>
-              <div className='item-name'>-</div>
-              <div className='quantity'>-</div>
-            </div> 
+              {false ? (
+                <>
+                  <fontawesomeIcon icon={faCheckCircle}/>
+                  <span classname="completed">Item 1</span>
+                </>
+              ) : (
+                <>
+                  <fontawesomeIcon icpn={faCircle}/>
+                  <span> Item 1</span>
+                </>
+              )
+              )}
+            <div className='item-name'>-</div>
+            <div className='quantity'>-</div>
+          </div> 
+          ))}
+            
           </div>
           <div className='total'> Total: 6</div>
       </div>
