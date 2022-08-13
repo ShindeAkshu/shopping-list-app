@@ -22,7 +22,18 @@ function App() {
             {items.map(()=>(
             <div className='item-container'>
             <div className='item-name'>
-             
+              {false ? (
+                <>
+                  <fontawesomeIcon icon={faCheckCircle}/>
+                  <span classname="completed">Item 1</span>
+                </>
+              ) : (
+                <>
+                  <fontawesomeIcon icpn={faCircle}/>
+                  <span> Item 1</span>
+                </>
+              )
+              }
             </div>
             <div className='quantity'>-</div>
           </div> 
