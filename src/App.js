@@ -1,7 +1,6 @@
 import { useState,useEffect } from 'react';
 import './App.css';
 import './index.css';
-import {fontawesomeIcon} from '@fontawesome/react-fontawesomeIcon';
 
 function App() {
   const [items,setItems] =useState([
@@ -35,7 +34,8 @@ function App() {
               )
               }
             </div>
-            <div className='quantity'>{false ? (
+            <div className='quantity'>
+              {false ? (
                 <>
                   <fontawesomeIcon icon={faCheckCircle}/>
                   <span classname="completed">Item 1</span>
@@ -46,7 +46,8 @@ function App() {
                   <span> Item 1</span>
                 </>
               )
-              }</div>
+              }
+              </div>
           </div> 
           ))}
             
