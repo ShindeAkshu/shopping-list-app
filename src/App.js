@@ -27,6 +27,19 @@ function App() {
     calculatetotal();
   };
 
+  const HandleQuantityIncrease = (index) =>{
+    const newItems=[...items];
+    newItems[index].quantity++;
+    setItems(newItems);
+     calculatetotal();
+  }
+
+  const HandleQuantityDecrease= (index) =>{
+    const newItems=[...items];
+    newItems[index].quantity--;
+    setItems(newItems);
+    calculatetotal();
+  }
 
   return (
     <div className="App-background">
