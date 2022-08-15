@@ -45,7 +45,7 @@ function App() {
     const totalItemCount = items.reduce((total,item) => {
       return total+item.quantity;
 
-      totalItemCount()
+      totalItemCount();
     })
   };
 
