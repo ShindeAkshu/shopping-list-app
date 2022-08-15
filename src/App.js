@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react';
 import './App.css';
 import './index.css';
-import {fontawesomeIcon} from '@fontawesome/react-fontawesomeIcon';
+import {FontawesomeIcon} from '@fontawesome/react-fontawesomeIcon';
 
 function App() {
   const [items,setItems] =useState([
@@ -16,7 +16,7 @@ function App() {
       <div className='main-container'>
         <div className='add-item-box' >
           <input className='add-item-input' placeholder='Add an Item...'/>
-            <fontawesomeIcon icon={FaPlus}/>
+            <FontawesomeIcon icon={FaPlus}/>
           </div>
           <div className='item-list'>
             {items.map(()=>(
@@ -24,30 +24,25 @@ function App() {
             <div className='item-name'>
               {false ? (
                 <>
-                  <fontawesomeIcon icon={faCheckCircle}/>
+                  <FontawesomeIcon icon={faCheckCircle}/>
                   <span classname="completed">Item 1</span>
                 </>
               ) : (
                 <>
-                  <fontawesomeIcon icpn={faCircle}/>
+                  <FontawesomeIcon icpn={faCircle}/>
                   <span> Item 1</span>
                 </>
               )
               }
             </div>
-            <div className='quantity'>
-              {false ? (
-                <>
-                  <fontawesomeIcon icon={faCheckCircle}/>
-                  <span classname="completed">Item 1</span>
-                </>
-              ) : (
-                <>
-                  <fontawesomeIcon icpn={faCircle}/>
-                  <span> Item 1</span>
-                </>
-              )
-              }
+            <div className='quantity'> 
+              <button>
+                <fontawesomeIcon icon={faChevronLeft}/>
+              </button>
+              <span>1</span>
+              <button>
+                <fontawesomeIcon icon={faChevronRight}/>
+              </button>
               </div>
           </div> 
           ))}
