@@ -32,21 +32,29 @@ function App() {
     newItems[index].quantity++;
     setItems(newItems);
      calculatetotal();
-  }
+  };
 
   const HandleQuantityDecrease= (index) =>{
     const newItems=[...items];
     newItems[index].quantity--;
     setItems(newItems);
     calculatetotal();
-  }
+  };
+
+  const calculatetotal = () => {
+    const totalItemCount = items.reduce((total,item) => {
+      return total+item.quantity;
+
+      totalItemCount()
+    })
+  };
 
   return (
     <div className="App-background">
       <div className='main-container'>
         <div className='add-item-box' >
           <input className='add-item-input' placeholder='Add an Item...'/>
-            <FontawesomeIcon icon={FaPlus}/>
+            <FontawesomeIcon icon={FaPlus} onClick={HandleAddButtonClick}/>
           </div>
           <div className='item-list'>
             {items.map(()=>(
@@ -55,7 +63,7 @@ function App() {
               {false ? (
                 <>
                   <FontawesomeIcon icon={faCheckCircle}/>
-                  <span classname="completed">Item 1</span>
+                  <span classname="completed">{items.itemName}</span>
                 </>
               ) : (
                 <>
@@ -67,11 +75,11 @@ function App() {
             </div>
             <div className='quantity'> 
               <button>
-                <fontawesomeIcon icon={faChevronLeft}/>
+                <fontawesomeIcon icon={faChevronLeft} onClick={HandleQuantityDecrease}/>
               </button>
               <span>1</span>
               <button>
-                <fontawesomeIcon icon={faChevronRight}/>
+                <fontawesomeIcon icon={faChevronRight} onClick={HandleQuantityIncrease}/>
               </button>
               </div>
           </div> 
