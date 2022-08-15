@@ -10,7 +10,15 @@ function App() {
     {itemName:'item 1',quantity:1,isSelected:false },
   ]);
 
-  
+  const[inputValue,setInputValue] =useState('');
+  const[totalItemCount,setTotalItemCount]=('6');
+
+  const HandleAddButtonClick =() => {
+    const newItem ={
+      itemName:inputValue,
+      quantiy:1,
+      isSelected:false,
+    };
 
     const newItems =[...items,newItem];
     
