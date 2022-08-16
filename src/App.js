@@ -41,7 +41,14 @@ function App() {
     calculatetotal();
   };
 
-  
+  const calculatetotal = () => {
+    const totalItemCount = items.reduce((total,item) => {
+      return total+item.quantity;
+
+      totalItemCount();
+    })
+  };
+
   return (
     <div className="App-background">
       <div className='main-container'>
