@@ -78,7 +78,7 @@ function App() {
               <button>
                 <fontawesomeIcon icon={faChevronLeft} onClick={() => HandleQuantityDecrease(index)}/>
               </button>
-              <span>1</span>
+              <span>{item.quantity}</span>
               <button>
                 <fontawesomeIcon icon={faChevronRight} onClick={() => HandleQuantityIncrease(index)}/>
               </button>
@@ -87,7 +87,7 @@ function App() {
           ))}
             
           </div>
-          <div className='total'> Total: 6</div>
+          <div className='total'> Total: {totalItemCount}</div>
       </div>
    </div>
   );
