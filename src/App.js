@@ -87,7 +87,7 @@ function App() {
           ))}
             
           </div>
-          
+          <div className='total'> Total: {totalItemCount}</div>
       </div>
    </div>
   );
