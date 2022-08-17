@@ -55,13 +55,13 @@ function App() {
         <div className='add-item-box' >
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}
            className='add-item-input' placeholder='Add an Item...'/>
-            <FontawesomeIcon icon={FaPlus} onClick={HandleAddButtonClick}/>
+            <FontawesomeIcon icon={FaPlus} onClick={() =>HandleAddButtonClick()}/>
           </div>
           <div className='item-list'>
-            {items.map(()=>(
+            {items.map((item,index)=>(
             <div className='item-container'>
-            <div className='item-name'>
-              {false ? (
+            <div className='item-name' onClick={() => toggleComplete(index)}>
+              {item.isSelected ? (
                 <>
                   <FontawesomeIcon icon={faCheckCircle}/>
                   <span classname="completed">{items.itemName}</span>
@@ -76,11 +76,11 @@ function App() {
             </div>
             <div className='quantity'> 
               <button>
-                <fontawesomeIcon icon={faChevronLeft} onClick={HandleQuantityDecrease}/>
+                <fontawesomeIcon icon={faChevronLeft} onClick={() => HandleQuantityDecrease(index)}/>
               </button>
               <span>1</span>
               <button>
-                <fontawesomeIcon icon={faChevronRight} onClick={HandleQuantityIncrease}/>
+                <fontawesomeIcon icon={faChevronRight} onClick={() => HandleQuantityIncrease(index)}/>
               </button>
               </div>
           </div> 
