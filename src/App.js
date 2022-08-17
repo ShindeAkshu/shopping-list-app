@@ -45,15 +45,16 @@ function App() {
     const totalItemCount = items.reduce((total,item) => {
       return total+item.quantity;
 
-      totalItemCount();
-    })
+    },0);
+   setTotalItemCount(totalItemCount);
   };
 
   return (
     <div className="App-background">
       <div className='main-container'>
         <div className='add-item-box' >
-          <input className='add-item-input' placeholder='Add an Item...'/>
+          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}
+           className='add-item-input' placeholder='Add an Item...'/>
             <FontawesomeIcon icon={FaPlus} onClick={HandleAddButtonClick}/>
           </div>
           <div className='item-list'>
