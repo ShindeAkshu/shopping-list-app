@@ -6,8 +6,8 @@ import {FontawesomeIcon} from '@fontawesome/react-fontawesomeIcon';
 function App() {
   const [items,setItems] =useState([
     {itemName:'item 1',quantity:1,isSelected:false },
-    {itemName:'item 1',quantity:1,isSelected:false }, 
-    {itemName:'item 1',quantity:1,isSelected:false },
+    {itemName:'item 2',quantity:5,isSelected:false }, 
+    {itemName:'item 3',quantity:4,isSelected:false },
   ]);
 
   const[inputValue,setInputValue] =useState('');
