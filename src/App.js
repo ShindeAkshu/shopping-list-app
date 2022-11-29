@@ -1,9 +1,14 @@
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 import './App.css';
 import './index.css';
-import {FontawesomeIcon} from '@fontawesome/react-fontawesomeIcon';
 
-function App() {
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlus,faCheckCircle,faChevronLeft,faCircle,faChevronRight } from '@fortawesome/free-soild-svg-icons';
+
+
+
+
+const App =() => {
   const [items,setItems] =useState([
     {itemName:'item 1',quantity:1,isSelected:false },
     {itemName:'item 2',quantity:5,isSelected:false }, 
@@ -34,6 +39,12 @@ function App() {
      calculatetotal();
   };
 
+  const toggleComplete =(index) => {
+    const newItems =[...items];
+    newItems[index].isSelected = !newItems[index].isSelected;
+    setItems(newItems);  
+  };
+
   const HandleQuantityDecrease= (index) =>{
     const newItems=[...items];
     newItems[index].quantity--;
@@ -55,7 +66,7 @@ function App() {
         <div className='add-item-box' >
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}
            className='add-item-input' placeholder='Add an Item...'/>
-            <FontawesomeIcon icon={FaPlus} onClick={() =>HandleAddButtonClick()}/>
+            <FontAwesomeIcon icon={faPlus} onClick={() =>HandleAddButtonClick()}/>
           </div>
           <div className='item-list'>
             {items.map((item,index)=>(
@@ -63,12 +74,12 @@ function App() {
             <div className='item-name' onClick={() => toggleComplete(index)}>
               {item.isSelected ? (
                 <>
-                  <FontawesomeIcon icon={faCheckCircle}/>
+                  <FontAwesomeIcon icon={faCheckCircle}/>
                   <span classname="completed">{items.itemName}</span>
                 </>
               ) : (
                 <>
-                  <FontawesomeIcon icpn={faCircle}/>
+                  <FontAwesomeIcon icon={faCircle}/>
                   <span> Item 1</span>
                 </>
               )
@@ -76,11 +87,11 @@ function App() {
             </div>
             <div className='quantity'> 
               <button>
-                <fontawesomeIcon icon={faChevronLeft} onClick={() => HandleQuantityDecrease(index)}/>
+                <fontAwesomeIcon icon={faChevronLeft} onClick={() => HandleQuantityDecrease(index)}/>
               </button>
               <span>{item.quantity}</span>
               <button>
-                <fontawesomeIcon icon={faChevronRight} onClick={() => HandleQuantityIncrease(index)}/>
+                <fontAwesomeIcon icon={faChevronRight} onClick={() => HandleQuantityIncrease(index)}/>
               </button>
               </div>
           </div> 
